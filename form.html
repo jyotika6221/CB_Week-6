@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="validateForm.js" defer></script>
+  </head>
+  <body>
+    <h1>Contact Me</h1>
+    <form
+      id="contactForm"
+      action="submit-form.php"
+      method="POST"
+      onsubmit="return validateForm()"
+    >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="subject">Subject:</label>
+      <select id="subject" name="subject">
+        <option value="">Select a Subject</option>
+
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <!-- Add more subjects as needed --></select
+      ><br /><br />
+
+      <div id="selectedSubject" style="display: none">
+        <label for="selectedSubjectText">Selected Subject:</label>
+        <span id="selectedSubjectText"></span>
+      </div>
+
+      <label for="message">Message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        cols="50"
+        required
+      ></textarea
+      ><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
